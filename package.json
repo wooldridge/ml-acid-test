@@ -1,0 +1,9 @@
+{
+  "name": "ml-acid-test",
+  "version": "0.0.1",
+  "description": "Tests ACIDity of MarkLogic transactions",
+  "author": "Mike Wooldridge",
+  "dependencies": {
+    "request": "^2.67.0"
+  }
+}
