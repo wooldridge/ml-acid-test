@@ -38,14 +38,14 @@ function (error, response, body) {
       function (error, response, body) {
         console.log('5.  T1 finished reading /foo.txt, value: ' + body);
         // 5. tx2 write /foo.txt
-        console.log('6.  T2 starting to write /foo.txt, value: 2');
+        console.log('6.  T2 starting to write /foo.txt');
         mlRequest.put({
           'uri': urlBase + 'documents?uri=/foo.txt&txid=' + tx2,
           'body': '2'
         },
         function (error, response, body) {
           var result = response.statusCode === 204 ? 'success' : 'failure';
-          console.log('7.  T2 finished writing /foo.txt: ' + result + ' (' + response.statusCode + ')');
+          console.log('7.  T2 finished writing /foo.txt, value 2');
           console.log('8.  T2 starting to commit');
           mlRequest.post({
             'uri': urlBase + 'transactions/' + tx2 + '?result=commit'
